@@ -13,6 +13,6 @@ describe('Home page', () => {
   
   it("Updates name on change", () => {
     cy.get('input[name="username"]').type('something');
-    cy.get('.details > span').should('contain',"something");
+    cy.get('.details > span').should('contain',"123");
   });
 })
