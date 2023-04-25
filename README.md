@@ -1,4 +1,4 @@
-[![khurm786](https://circleci.com/gh/circleci/circleci-docs.svg?style=svg)](https://app.circleci.com/pipelines/github/khurm786/cypress-test)
+[![khurm786](https://circleci.com/gh/khurm786/cypress-test.svg?style=svg)](https://app.circleci.com/pipelines/github/khurm786/cypress-test)
 
 # Getting Started with Create React App
 
