@@ -8,3 +8,6 @@ workflows:
           cypress-command: npx cypress run --browser chrome
           install-browsers: true
           start-command: npm run start
+          record: true
+          parallel: true
+          parallelism: 3
