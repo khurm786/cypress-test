@@ -1,23 +1,10 @@
-version: 2.1
-
-# Use a package of configuration called an orb.
-
+version: '2.1'
 orbs:
-
-  # Declare a dependency on the welcome-orb
-
-  welcome: circleci/welcome-orb@0.4.1
-
-# Orchestrate or schedule a set of jobs
-
+  cypress: cypress-io/cypress@3
 workflows:
-
-  # Name the workflow “welcome”
-
-  welcome:
-
-  # Run the welcome/run job in its own container
-
+  use-my-orb:
     jobs:
-
-    - welcome/run
+      - cypress/run:
+          cypress-command: npx cypress run --browser chrome
+          install-browsers: true
+          start-command: npm run start:dev
