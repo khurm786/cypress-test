@@ -1,11 +1,4 @@
-# Template:
-[![<ORG_NAME>](https://circleci.com/<VCS>/khurm786/cypress-test.svg?style=svg)](<LINK>)
-
-# Example:
-[![CircleCI](https://circleci.com/gh/circleci/circleci-docs.svg?style=svg)](https://circleci.com/gh/circleci/circleci-docs)
-
-# Example for specific branch:
-[![CircleCI](https://circleci.com/gh/circleci/circleci-docs/tree/teesloane-patch-5.svg?style=svg)](https://circleci.com/gh/circleci/circleci-docs/?branch=teesloane-patch-5)
+[![khurm786](https://circleci.com/gh/circleci/circleci-docs.svg?style=svg)](https://app.circleci.com/pipelines/github/khurm786/cypress-test)
 
 # Getting Started with Create React App
 
