@@ -69,7 +69,7 @@ jobs:
           at: ~/app
       - run:
           name: "Running Unit Tests"
-          command: npm run tests:unit
+          command: npm run test
 
   # ESLint
   lint:
