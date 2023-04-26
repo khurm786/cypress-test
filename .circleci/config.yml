@@ -82,6 +82,26 @@ jobs:
           name: "Running ESLint"
           command: npm run lint
 
+  install-and-persist:
+    executor: cypress/default
+    steps:
+      - cypress/install
+      - persist_to_workspace:
+          paths:
+            - .cache/Cypress
+            - project
+          root: ~/
+  run-tests-in-parallel:
+    executor: cypress/default
+    parallelism: 2
+    steps:
+      - attach_workspace:
+          at: ~/
+      - cypress/run-tests:
+          cypress-command: npx cypress run --browser chrome
+          install-browsers: true
+          start-command: npm run start
+
 workflows:
   version: 2
   build:
@@ -98,7 +118,13 @@ workflows:
           requires:
             - checkout
             - install_deps
-      - cypress/run:
-          cypress-command: npx cypress run --browser chrome
-          install-browsers: true
-          start-command: npm run start
+      - install-and-persist:
+          name: Install & Persist To Workspace
+      - run-tests-in-parallel:
+          name: Run Tests in Parallel
+          requires:
+            - Install & Persist To Workspace
+      # - cypress/run:
+      #     cypress-command: npx cypress run --browser chrome
+      #     install-browsers: true
+      #     start-command: npm run start
